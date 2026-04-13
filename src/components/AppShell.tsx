@@ -31,10 +31,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <span className="h-1.5 w-1.5 rounded-full bg-lumo-cyan animate-pulseGlow" />
               Aktualna lokalizacja · Warszawa, Tuwim
             </div>
-            <button className="relative h-10 w-10 rounded-full glass grid place-items-center" aria-label="Notifications">
+            <Link href="/app/notifications" className="relative h-10 w-10 rounded-full glass grid place-items-center" aria-label="Notifications">
               <Icon.Bell size={18} />
               <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-lumo-pink shadow-glowPink" />
-            </button>
+            </Link>
             <Link href="/app/account" className="h-10 w-10 overflow-hidden rounded-full ring-gradient grid place-items-center bg-ink-800">
               <span className="gradient-text font-bold text-sm">G</span>
             </Link>

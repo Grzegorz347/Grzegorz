@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { useEffect, useState } from "react";
 
@@ -9,7 +10,12 @@ export default function PromotionsPage() {
   useEffect(() => { fetch("/api/promotions").then((r) => r.json()).then((d) => setPromos(d.promotions)); }, []);
   return (
     <div className="max-w-3xl space-y-6">
-      <h1 className="font-display text-3xl font-bold">Promocje</h1>
+      <div className="flex items-center justify-between flex-wrap gap-3">
+        <h1 className="font-display text-3xl font-bold">Promocje</h1>
+        <Link href="/app/vouchers" className="btn-outline !py-2 !px-4 text-sm inline-flex items-center gap-2">
+          <Icon.Tag size={14} /> Dodaj voucher / kod
+        </Link>
+      </div>
       <div className="grid sm:grid-cols-2 gap-4">
         {promos.map((p) => (
           <div key={p.id} className="card relative overflow-hidden p-5">
